@@ -18,24 +18,22 @@ const createApparelList = (arr) => {
         const {name, materials, price, emoji} = apparel;
         apparelEmojiContainer.textContent = emoji;
         itemName.textContent = name;
-        // itemMaterials.textContent = 
+        itemMaterials.textContent = materials.map(material => material).join(', ');
         itemPrice.textContent = `$${price}`;
         addButtonEl.textContent = '+';
 
-
         apparelInfoContainer.appendChild(itemName);
         apparelInfoContainer.appendChild(itemPrice);
-
+        apparelInfoContainer.appendChild(itemMaterials);
 
         apparelsContainer.appendChild(apparelEmojiContainer);
         apparelsContainer.appendChild(apparelInfoContainer);
         apparelsContainer.appendChild(addButtonEl);
 
-
         apparelEl.appendChild(apparelsContainer);
-    })
+    });
 
-}
+};
 
 
 
