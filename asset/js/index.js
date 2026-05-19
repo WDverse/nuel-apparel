@@ -23,8 +23,8 @@ const createApparelList = (arr) => {
         addButtonEl.textContent = '+';
 
         apparelInfoContainer.appendChild(itemName);
-        apparelInfoContainer.appendChild(itemPrice);
         apparelInfoContainer.appendChild(itemMaterials);
+        apparelInfoContainer.appendChild(itemPrice);
 
         apparelsContainer.appendChild(apparelEmojiContainer);
         apparelsContainer.appendChild(apparelInfoContainer);
