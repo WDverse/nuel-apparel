@@ -17,7 +17,8 @@ const createApparelList = (arr) => {
         const itemPrice = document.createElement('p');
 
         const {name, materials, price, emoji} = apparel;
-        apparelsContainer.dataset.name = name // add data-* attr to every item container 
+        apparelsContainer.dataset.name = name // add the item name as a data-* attr to every item container 
+        apparelsContainer.dataset.price = price // add the item name as a data-* attr to every item container 
         apparelEmojiContainer.textContent = emoji;
         itemName.textContent = name;
         itemMaterials.textContent = materials.map(material => material).join(', ');
@@ -42,9 +43,15 @@ const createApparelList = (arr) => {
 function handlePreCheckout (e) {
     const orderListContainer = document.createElement('div');
     const addedItemName = document.createElement('span');
+    const addedItemPrice = document.createElement('span');
 
     addedItemName.textContent = e.target.parentElement.dataset.name;
+    addedItemPrice.textContent = ' $' + e.target.parentElement.dataset.price;
+
+
     orderListContainer.appendChild(addedItemName);
+    orderListContainer.appendChild(addedItemPrice);
+
     orderList.appendChild(orderListContainer);
 }
 
