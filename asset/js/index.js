@@ -2,6 +2,7 @@ import apparelArr from './data.js';
 
 const apparelEl = document.getElementById('menu');
 const orderList = document.getElementById('order-list');
+const totalPriceEl = document.getElementById('total-amt');
 
 const createApparelList = (arr) => {
     arr.forEach( apparel => {
@@ -40,17 +41,23 @@ const createApparelList = (arr) => {
 
 };
 
+ const allPricesArr = [];
+
 function handlePreCheckout (e) {
     const orderListContainer = document.createElement('div');
-    const addedItemName = document.createElement('span');
-    const addedItemPrice = document.createElement('span');
+    const addedItemNameEl = document.createElement('span');
+    const addedItemPriceEl = document.createElement('span');
 
-    addedItemName.textContent = e.target.parentElement.dataset.name;
-    addedItemPrice.textContent = ' $' + e.target.parentElement.dataset.price;
+    addedItemNameEl.textContent = e.target.parentElement.dataset.name;
+    addedItemPriceEl.textContent = ' $' + e.target.parentElement.dataset.price;
 
+    const total = allPricesArr.push(Number(e.target.parentElement.dataset.price));
+    
+    const totalPrice = allPricesArr.reduce((total, price) => total + price, 0);
+    totalPriceEl.textContent = ' $' + totalPrice;
 
-    orderListContainer.appendChild(addedItemName);
-    orderListContainer.appendChild(addedItemPrice);
+    orderListContainer.appendChild(addedItemNameEl);
+    orderListContainer.appendChild(addedItemPriceEl);
 
     orderList.appendChild(orderListContainer);
 }
