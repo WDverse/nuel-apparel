@@ -47,9 +47,11 @@ function handlePreCheckout (e) {
     const orderListContainer = document.createElement('div');
     const addedItemNameEl = document.createElement('span');
     const addedItemPriceEl = document.createElement('span');
+    const removeItemEl = document.createElement('span');
 
     addedItemNameEl.textContent = e.target.parentElement.dataset.name;
     addedItemPriceEl.textContent = ' $' + e.target.parentElement.dataset.price;
+    removeItemEl.textContent = ' remove';
 
     const total = allPricesArr.push(Number(e.target.parentElement.dataset.price));
     
@@ -57,6 +59,7 @@ function handlePreCheckout (e) {
     totalPriceEl.textContent = ' $' + totalPrice;
 
     orderListContainer.appendChild(addedItemNameEl);
+    orderListContainer.appendChild(removeItemEl);
     orderListContainer.appendChild(addedItemPriceEl);
 
     orderList.appendChild(orderListContainer);
