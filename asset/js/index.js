@@ -3,6 +3,7 @@ import apparelArr from './data.js';
 const apparelEl = document.getElementById('menu');
 const orderList = document.getElementById('order-list');
 const totalPriceEl = document.getElementById('total-amt');
+const payBtnEl = document.getElementById('pay-btn');
 
 const createApparelList = (arr) => {
     arr.forEach( apparel => {
@@ -52,6 +53,7 @@ function handlePreCheckout (e) {
     addedItemNameEl.textContent = e.target.parentElement.dataset.name;
     addedItemPriceEl.textContent = ' $' + e.target.parentElement.dataset.price;
     removeItemEl.textContent = ' remove';
+    removeItemEl.setAttribute('type','button');
     removeItemEl.addEventListener('click', handleRemoveItem);
 
     const total = allPricesArr.push(Number(e.target.parentElement.dataset.price));
@@ -69,5 +71,26 @@ function handlePreCheckout (e) {
 function handleRemoveItem (e) {
     e.target.parentElement.style.display = 'none';
 }
+
+payBtnEl.addEventListener('click', function handlePayment (e) {
+    e.preventDefault();
+
+    const modalEl = document.getElementById('modal');
+    modalEl.style.display = 'none';
+    const orderContainer = document.getElementById('order-container');
+    orderContainer.style.display = 'none';
+    renderMessage ();
+} )
+
+
+function renderMessage () {
+    const mainEl = document.getElementById('main');
+     const nameInputEl = document.getElementById('username');
+     const messageEl = document.createElement ('div');
+    const username = nameInputEl.value;
+    messageEl.textContent = `Thanks, ${username}! Your order is on its way!` ;
+    mainEl.appendChild(messageEl);
+}
+
 
 createApparelList(apparelArr);

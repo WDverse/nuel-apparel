@@ -14,13 +14,13 @@
             <p>For all your summer steeze</p>
         </header>
 
-        <main>
+        <main id="main">
             <section id ="menu" class="menu">
 
             </section>
 
             <section id="pre-checkout" class="pre-checkout">
-                <div class="order-container">
+                <div class="order-container" id="order-container">
                     <h2>Your Order</h2>
                     <ul id="order-list"class="order-list">
 
@@ -35,9 +35,19 @@
                     </div>
 
                 </div>
-
             </section>
         </main>
+
+        <div id="modal" class="modal">
+            <form>
+                <h3>Enter Card Details</h3>
+                <input id="username" type="text" placeholder="Enter your name">
+                <input type="password" placeholder="Enter card number">
+                <input type="password" placeholder="Enter CVV">
+                <button class="pay-btn" id="pay-btn" type="submit">Pay</button>
+            </form>
+
+        </div>
 
         <script src="./asset/js/index.js" type="module"></script>
     </body>
