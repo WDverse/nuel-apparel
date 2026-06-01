@@ -52,6 +52,7 @@ function handlePreCheckout (e) {
     addedItemNameEl.textContent = e.target.parentElement.dataset.name;
     addedItemPriceEl.textContent = ' $' + e.target.parentElement.dataset.price;
     removeItemEl.textContent = ' remove';
+    removeItemEl.addEventListener('click', handleRemoveItem);
 
     const total = allPricesArr.push(Number(e.target.parentElement.dataset.price));
     
@@ -65,5 +66,8 @@ function handlePreCheckout (e) {
     orderList.appendChild(orderListContainer);
 }
 
+function handleRemoveItem (e) {
+    e.target.parentElement.style.display = 'none';
+}
 
 createApparelList(apparelArr);
