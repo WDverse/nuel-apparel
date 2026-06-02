@@ -10,7 +10,8 @@ const createApparelList = (arr) => {
         const apparelsContainer = document.createElement('div');
         apparelsContainer.classList.add('apparels-container');
 
-        const apparelEmojiContainer =  document.createElement('div');
+        const apparelEmojiEl =  document.createElement('span');
+        apparelEmojiEl.classList.add('emoji')
         const apparelInfoContainer =  document.createElement('div');
         const addButtonEl = document.createElement('button');
 
@@ -21,7 +22,7 @@ const createApparelList = (arr) => {
         const {name, materials, price, emoji} = apparel;
         apparelsContainer.dataset.name = name // add the item name as a data-* attr to every item container 
         apparelsContainer.dataset.price = price // add the item name as a data-* attr to every item container 
-        apparelEmojiContainer.textContent = emoji;
+        apparelEmojiEl.textContent = emoji;
         itemName.textContent = name;
         itemMaterials.textContent = materials.map(material => material).join(', ');
         itemPrice.textContent = `$${price}`;
@@ -33,7 +34,7 @@ const createApparelList = (arr) => {
         apparelInfoContainer.appendChild(itemMaterials);
         apparelInfoContainer.appendChild(itemPrice);
 
-        apparelsContainer.appendChild(apparelEmojiContainer);
+        apparelsContainer.appendChild(apparelEmojiEl);
         apparelsContainer.appendChild(apparelInfoContainer);
         apparelsContainer.appendChild(addButtonEl);
 
