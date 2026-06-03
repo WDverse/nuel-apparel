@@ -20,7 +20,10 @@ const createApparelList = (arr) => {
         addButtonEl.classList.add('addBtn');
 
         const itemName = document.createElement('p');
+        itemName.classList.add('itemName');
+
         const itemMaterials = document.createElement('p');
+        itemMaterials.classList.add('itemMaterials')
         const itemPrice = document.createElement('p');
 
         const {name, materials, price, emoji} = apparel;
