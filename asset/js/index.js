@@ -12,8 +12,12 @@ const createApparelList = (arr) => {
 
         const apparelEmojiEl =  document.createElement('span');
         apparelEmojiEl.classList.add('emoji')
+
         const apparelInfoContainer =  document.createElement('div');
+        apparelInfoContainer.classList.add('apparelInfoContainer');
+
         const addButtonEl = document.createElement('button');
+        addButtonEl.classList.add('addBtn');
 
         const itemName = document.createElement('p');
         const itemMaterials = document.createElement('p');
