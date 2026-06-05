@@ -59,7 +59,28 @@ main{
     margin: 0px;
 }
 
-.itemMaterials{
+.itemMaterials, .removeBtn{
     color: gray;
     font-size: 1rem;
+}
+
+h2{
+    text-align: center;
+}
+
+.orderListContainer{
+    display: flex;
+    margin:0px 30px 0px 30px;
+}
+
+.addedItemPrice{
+    margin-left: auto;
+}
+
+.removeBtn{
+    margin: 8px;
+    cursor: pointer;
+}
+.total-amt-label{
+     margin:0px 70px 0px 70px;
 }

@@ -54,9 +54,16 @@ const createApparelList = (arr) => {
 
 function handlePreCheckout (e) {
     const orderListContainer = document.createElement('div');
+    orderListContainer.classList.add('orderListContainer');
+
     const addedItemNameEl = document.createElement('span');
+    addedItemNameEl.classList.add('addedItemName');
+
     const addedItemPriceEl = document.createElement('span');
+    addedItemPriceEl.classList.add('addedItemPrice');
+
     const removeItemEl = document.createElement('span');
+    removeItemEl.classList.add('removeBtn');
 
     addedItemNameEl.textContent = e.target.parentElement.dataset.name;
     addedItemPriceEl.textContent = ' $' + e.target.parentElement.dataset.price;
