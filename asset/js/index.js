@@ -4,6 +4,10 @@ const apparelEl = document.getElementById('menu');
 const orderList = document.getElementById('order-list');
 const totalPriceEl = document.getElementById('total-amt');
 const payBtnEl = document.getElementById('pay-btn');
+const modalEl = document.getElementById('modal');
+const completeOrderBtn = document.getElementById('complete-order-btn')
+
+modalEl.style.display = 'none'
 
 const createApparelList = (arr) => {
     arr.forEach( apparel => {
@@ -106,6 +110,10 @@ function renderMessage () {
     messageEl.textContent = `Thanks, ${username}! Your order is on its way!` ;
     mainEl.appendChild(messageEl);
 }
+
+completeOrderBtn.addEventListener('click', function(){
+    modalEl.style.display = 'block';
+})
 
 
 createApparelList(apparelArr);
